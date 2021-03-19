@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   constructor(private userdata:UserdataService, private router:Router) { }
 
   loginForm= new FormGroup({
-    'username' : new FormControl('')
+    'username' : new FormControl(''),
+    'password' : new FormControl('')
   })
 
   ngOnInit(): void {
@@ -24,13 +25,22 @@ export class LoginComponent implements OnInit {
   }
 
   onclick(){
-    if (this.loginForm.get('username')?.value == "malaika")
+      // this.userauth.login(this.loginForm.value).subscribe(
+      //   (res:any)=>{
+      //     console.log(res)
+      //   },
+      //   err=>{
+      //     console.log(err)
+      //   }
+      // )
+
+    if (this.loginForm.get('username')?.value == "sharmalaika17@gmail.com" && this.loginForm.get('password')?.value == "12345" )
     {
       this.userdata.setData(this.loginForm.value)
       this.router.navigateByUrl('layout/dashboard')
     }
     else{
-      alert('incorrect or invalid username')
+      alert('incorrect or invalid username and password')
     }
   }
 

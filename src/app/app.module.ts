@@ -21,7 +21,9 @@ import { ErrorComponent } from './error/error.component';
     LayoutComponent,
     DashboardComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    
+  
   ],
   imports: [
     BrowserModule,
